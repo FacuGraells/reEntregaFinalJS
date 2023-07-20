@@ -54,7 +54,7 @@ const pintarCarrito = () => {
             
 
 
-        console.log(carrito.length);
+        
 
         let eliminar = carritoContent.querySelector(".delete-product");
 
@@ -113,22 +113,47 @@ carritoCounter();
 
 
     
-    document.querySelector("#formu").addEventListener("submit", function(event) {
-        event.preventDefault();
+    // document.querySelector("#formu").addEventListener("submit", function(event) {
+    //     event.preventDefault();
       
-        const nombre = document.querySelector("#nombre").value;
+    //     const nombre = document.querySelector("#nombre").value;
         
-        const direccion = document.querySelector("#direccion").value;
+    //     const direccion = document.querySelector("#direccion").value;
       
     
-    Swal.fire({
-          title: "Gracias por su compra",
-          text: nombre +  " " + "hemos recibido su pedido correctamente.",
-          icon: "success",
-          confirmButtonText: "Aceptar",
-        });
-      });
-
+    // Swal.fire({
+    //       title: "Gracias por su compra",
+    //       text: nombre +  " " + "hemos recibido su pedido correctamente y sera enviado a su direccion en 5 dias habiles.",
+    //       icon: "success",
+    //       confirmButtonText: "Aceptar",
+    //     });
+    //   });
+    //   console.log(nombre, direccion);
 
     
 
+    let nombre = "";
+    let direccion = "";
+    
+    document.querySelector("#formu").addEventListener("submit", function(event) {
+      event.preventDefault();
+    
+      
+      nombre = document.querySelector("#nombre").value;
+      direccion = document.querySelector("#direccion").value;
+    
+      Swal.fire({
+        title: "Gracias por su compra",
+        text: nombre + " hemos recibido su pedido correctamente y será enviado a" + " " + direccion + " " + "en 5 días hábiles.",
+        icon: "success",
+        confirmButtonText: "Aceptar",
+      });
+    
+    });
+     
+    document.querySelector("#formu").addEventListener("submit", function(event) {
+      
+    });
+      
+    
+    
