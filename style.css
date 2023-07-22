@@ -362,8 +362,13 @@ footer {
   form {
     margin: 50px;
   }
+  
+ .divInfo {
+      display: flex;
+      justify-content: center;
+      font-weight: bold;
       
-
+ }
   
 
   @media screen and (max-width: 576px) {

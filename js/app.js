@@ -1,3 +1,4 @@
+
 const shopContent = document.getElementById("shopContent");
 const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modal-container");
@@ -5,6 +6,8 @@ const cantidadCarrito = document.getElementById("cantidadCarrito");
 
 
 //carrito
+
+localStorage.clear();
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -48,6 +51,8 @@ const getProducts = async () =>{
                 });
             } 
             
+            mostrarMensajeAgregado(product.nombre);
+
             carritoCounter();
             saveLocal();
         });
@@ -56,9 +61,20 @@ const getProducts = async () =>{
 
 getProducts();
 
-//set item
+
+const mostrarMensajeAgregado = (nombreProducto) => {
+    Swal.fire({
+      title: "Producto agregado",
+      text: `${nombreProducto} se ha agregado al carrito con éxito.`,
+      icon: "success",
+      confirmButtonText: "Aceptar",
+    });
+  };
+
+
+
 const saveLocal = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 
-//get item
+

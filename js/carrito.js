@@ -112,36 +112,37 @@ const carritoCounter = () => {
 carritoCounter();
 
 
-    
-    
+let nombre = "";
+let direccion = "";
 
-    
-
-    let nombre = "";
-    let direccion = "";
-    
     document.querySelector("#formu").addEventListener("submit", function(event) {
         event.preventDefault();
-    
-      
+
+  
         nombre = document.querySelector("#nombre").value;
         direccion = document.querySelector("#direccion").value;
+
+  
     
-      
-        
         const info = document.getElementById("informacion");
-        info.innerHTML = `<p>${nombre} hemos recibido su pedido correctamente y será enviado a ${direccion} en 5 días hábiles.</p>`;
-      
-        
-        
-        carrito = [];
-        carritoCounter();
-        saveLocal();
-       
-        
-    });
+        info.innerHTML = `<p>${nombre} hemos recibido su pedido correctamente y será enviado a ${direccion} en 5 días hábiles. Gracias por su compra!</p>`;
+  
     
     
+    carrito = [];
+    carritoCounter();
+    saveLocal();
+   
+    
+
+});
+
+    
+    
+
+    
+
+
 
 
 
