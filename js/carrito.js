@@ -113,22 +113,7 @@ carritoCounter();
 
 
     
-    // document.querySelector("#formu").addEventListener("submit", function(event) {
-    //     event.preventDefault();
-      
-    //     const nombre = document.querySelector("#nombre").value;
-        
-    //     const direccion = document.querySelector("#direccion").value;
-      
     
-    // Swal.fire({
-    //       title: "Gracias por su compra",
-    //       text: nombre +  " " + "hemos recibido su pedido correctamente y sera enviado a su direccion en 5 dias habiles.",
-    //       icon: "success",
-    //       confirmButtonText: "Aceptar",
-    //     });
-    //   });
-    //   console.log(nombre, direccion);
 
     
 
@@ -136,24 +121,37 @@ carritoCounter();
     let direccion = "";
     
     document.querySelector("#formu").addEventListener("submit", function(event) {
-      event.preventDefault();
+        event.preventDefault();
     
       
-      nombre = document.querySelector("#nombre").value;
-      direccion = document.querySelector("#direccion").value;
+        nombre = document.querySelector("#nombre").value;
+        direccion = document.querySelector("#direccion").value;
     
-      Swal.fire({
-        title: "Gracias por su compra",
-        text: nombre + " hemos recibido su pedido correctamente y será enviado a" + " " + direccion + " " + "en 5 días hábiles.",
-        icon: "success",
-        confirmButtonText: "Aceptar",
-      });
-    
+      
+        
+        const info = document.getElementById("informacion");
+        info.innerHTML = `<p>${nombre} hemos recibido su pedido correctamente y será enviado a ${direccion} en 5 días hábiles.</p>`;
+      
+        
+        
+        carrito = [];
+        carritoCounter();
+        saveLocal();
+       
+        
     });
-     
-    document.querySelector("#formu").addEventListener("submit", function(event) {
-      
-    });
-      
     
     
+
+
+
+
+
+
+
+
+
+
+
+
+   
